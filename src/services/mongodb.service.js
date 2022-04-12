@@ -35,26 +35,8 @@ const consultarDocumentos = async (nombreColeccion, filtro) => {
 const consTipoTodasProp = async (nombreColeccion) => {
   let db = await conectarDB()
   let coleccion = db.collection(nombreColeccion)
-
   return coleccion.distinct('property_type')
-
-  //let projection = {_id: 1}
-  
-  ////const cursor = coleccion.find().project(sort).limit(parseInt(process.env.DEFAULT_LIMIT_PROPERTIES))
-  //.sort(sort)
-  ////return cursor.distinct.toArray()
-
-  //let coleccion = db.collection(nombreColeccion).aggregate(datos)
-  //return coleccion.limit(parseInt(process.env.DEFAULT_LIMIT_PROPERTIES)).toArray()
 }
-
-/**
- const consTipoTodasProp = async (nombreColeccion) => {
-  let db = await conectarDB()
-  let pipeline = [{$group: {propiedad: '$property_type'}}]
-  let coleccion = db.collection(nombreColeccion).aggregate(pipeline)
-  return coleccion.limit(parseInt(process.env.DEFAULT_LIMIT_PROPERTIES)).toArray()
- */
 
 //2.
 /**

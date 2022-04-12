@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "4ba861d2-0cb3-4e99-b79b-3266eceaa7ab",
+		"name": "airbnb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consultar airbnb",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/airbnb/all-properties",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"airbnb",
+						"all-properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar propiedades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/airbnb/reviews",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"airbnb",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar numero camas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/airbnb/beds/5",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"airbnb",
+						"beds",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar tipo propiedades",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/airbnb/types",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"airbnb",
+						"types"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
