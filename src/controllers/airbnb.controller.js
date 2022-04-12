@@ -1,8 +1,13 @@
 
 // Importar los servicio
-const { consultarDocumentos, consultarProp, modificarNumCam} = require('../services/mongodb.service');
+const { consultarDocumentos, consultarProp, modificarNumCam, consTipoTodasProp} = require('../services/mongodb.service');
 
 //0.
+/**
+ * 
+ * @param {Request} req 
+ * @param {Response} res 
+ */
 const consultarAirbnb = async (req, res) => {
     let respuesta = {}
     try {
@@ -21,8 +26,34 @@ const consultarAirbnb = async (req, res) => {
 }
 
 //1.
+/**
+ * 
+ * @param {Request} req 
+ * @param {Response} res 
+ */
+const consultarTipoTodasProp = async (req, res) => {
+    let respuesta = {}
+    try {
+        respuesta.ok = true
+        respuesta.message = "Lista tipo de propiedades consultadas"
+        let resultado = await consTipoTodasProp(process.env.COLLECTION_AIRBNB)
+        respuesta.info = resultado
+        res.send(respuesta)
+    } catch (error) {
+        console.log(error);
+        respuesta.ok = false
+        respuesta.message = "Ha ocurrido un error en la lista de propiedades consultadas."
+        respuesta.info = error
+        res.status(500).send(respuesta)
+    }
+}
 
 //2.
+/**
+ * 
+ * @param {Request} req 
+ * @param {Response} res 
+ */
 const consultarPropiedades = async (req, res) => {
     let respuesta = {}
     try {
@@ -41,6 +72,11 @@ const consultarPropiedades = async (req, res) => {
 }
 
 //3.
+/**
+ * 
+ * @param {Request} req 
+ * @param {Response} res 
+ */
 const modificarNumeroCamas = async (req, res) => {
     let respuesta = {}
     try {
@@ -62,4 +98,4 @@ const modificarNumeroCamas = async (req, res) => {
 }
 
 
-module.exports = {consultarAirbnb, consultarPropiedades, modificarNumeroCamas}
+module.exports = {consultarAirbnb, consultarTipoTodasProp, consultarPropiedades, modificarNumeroCamas}

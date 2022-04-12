@@ -9,7 +9,7 @@ const vs = "/api/version1"
 router.get(vs + "/airbnb/all-properties", airbnbCtr.consultarAirbnb)
 
 //1.
-
+router.get(vs + "/airbnb/types", airbnbCtr.consultarTipoTodasProp)
 
 //2.
 router.get(vs + "/airbnb/reviews", airbnbCtr.consultarPropiedades)
